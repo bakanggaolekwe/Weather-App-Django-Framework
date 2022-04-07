@@ -681,11 +681,6 @@ select {
   position: absolute;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -700,10 +695,6 @@ select {
 
 .flex {
   display: flex;
-}
-
-.h-screen {
-  height: 100vh;
 }
 
 .w-96 {
@@ -758,14 +749,23 @@ select {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .leading-normal {
@@ -779,6 +779,11 @@ select {
 .text-stone-50 {
   --tw-text-opacity: 1;
   color: rgb(250 250 249 / var(--tw-text-opacity));
+}
+
+.text-blue-700 {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
 .shadow-md {

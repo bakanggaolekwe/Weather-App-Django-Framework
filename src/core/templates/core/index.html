@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container flex justify-center items-center v-screen mt-5">
+    <h1 class=" text-3xl text-blue-700 font-bold">WEATHER APP </h1>
+
+</div>
 <!-- input form -->
 <div class="container flex justify-center items-center v-screen mt-5">
     <!-- form  -->
     <form action="." method="POST">
         {% csrf_token %}
-       <input type="text" placeholder='Enter location' class="border-indigo-900 border-2 rounded-3xl shadow-md focus:indigo-600 w-96  placeholder-indigo-500::placeholder">
+       <input type="text" name="city" placeholder='Enter location' class="border-indigo-900 border-2 rounded-3xl shadow-md focus:indigo-600 w-96  placeholder-indigo-500::placeholder">
 
         
         <button id="btn" class="absolute bg-blue-700 text-sm pt-2 pb-2 px-4 -ml-20  rounded-3xl text-stone-50" type="submit" >Submit</a>
@@ -14,6 +18,20 @@
 
   
 </div>
+{% if country_code and description and temperature and pressure and humidity %}
+<div class="container flex justify-center items-center v-screen mt-5">
+    <ul>
+        <li><span class="text-blue-700 font-bold text-2xl">Country code : </span>  <span class="font-bold text-2xl"> {{country_code}}</span></li>
+        <li><span class="text-blue-700 font-bold text-2xl">Location Name: </span> <span class="font-bold text-2xl">{{city}}</span></li>
+        <li><span class="text-blue-700 font-bold text-2xl">Description :</span>   <span class="font-bold text-2xl">{{description}}</span></li>
+        <li><span class="text-blue-700 font-bold text-2xl">Temperature :</span>  <span class="font-bold text-2xl">{{temperature}} K</span></li>
+        <li><span class="text-blue-700 font-bold text-2xl">Pressure :</span>    <span class="font-bold text-2xl">{{pressure}} hPa</span></li>
+        <li><span class="text-blue-700 font-bold text-2xl">Humidity :</span>    <span class="font-bold text-2xl">{{humidity}}%</span></li>
+    </ul>
+    
+ </div>
+{% endif %}
+
 
 {% endblock%}
 
